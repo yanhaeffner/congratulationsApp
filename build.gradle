@@ -4,9 +4,13 @@ plugins {
 	id 'java'
 }
 
-group = 'com.yanhaeffner.cloud.final01'
+group = 'com.yanhaeffner.cloud.temafinal01'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+bootJar {
+	archiveFileName = "congratulationsApp.jar"
+}
 
 repositories {
 	mavenCentral()

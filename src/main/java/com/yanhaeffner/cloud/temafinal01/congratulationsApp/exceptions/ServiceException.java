@@ -1,4 +1,4 @@
-package com.yanhaeffner.cloud.final01.buildApp.exceptions;
+package com.yanhaeffner.cloud.temafinal01.congratulationsApp.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

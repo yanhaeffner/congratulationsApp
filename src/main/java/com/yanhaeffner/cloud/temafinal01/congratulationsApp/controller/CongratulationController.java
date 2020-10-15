@@ -1,6 +1,6 @@
-package com.yanhaeffner.cloud.final01.buildApp.controller;
+package com.yanhaeffner.cloud.temafinal01.congratulationsApp.controller;
 
-import com.yanhaeffner.cloud.final01.buildApp.service.CongratulationGenerator;
+import com.yanhaeffner.cloud.temafinal01.congratulationsApp.service.CongratulationGenerator;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

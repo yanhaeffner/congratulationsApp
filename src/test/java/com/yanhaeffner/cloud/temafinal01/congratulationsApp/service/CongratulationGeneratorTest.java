@@ -1,6 +1,6 @@
-package com.yanhaeffner.cloud.final01.buildApp.service;
+package com.yanhaeffner.cloud.temafinal01.congratulationsApp.service;
 
-import com.yanhaeffner.cloud.final01.buildApp.exceptions.ServiceException;
+import com.yanhaeffner.cloud.temafinal01.congratulationsApp.exceptions.ServiceException;
 import org.junit.Test;
 import org.springframework.test.util.AssertionErrors;
 
