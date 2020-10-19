@@ -31,7 +31,7 @@
     
     {
       "type": "file",
-      "source": "gradle-release-local/congratulationsApp/congratulationsApp.jar",
+      "source": "congratulationsApp/congratulationsApp/congratulationsApp.jar",
       "destination": "congratulationsApp.jar"
     }
   ],
