@@ -25,7 +25,7 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "playbook-congratulationsApp.yml"
+      "playbook_file": "../build_app/playbook-congratulationsApp.yml"
     },
     {
       "type": "file",
