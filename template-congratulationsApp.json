@@ -11,7 +11,7 @@
       "commit": true,
       "changes": [
         "EXPOSE 8282",
-        "ENTRYPOINT [\"java\", \"-jar\", \"/congratulationsApp.jar\"]"      ]
+        "ENTRYPOINT [\"java\", \"-jar\", \"/usr/local/congratulationsApp.jar\"]"      ]
     }
   ],
   "provisioners":[
@@ -32,7 +32,7 @@
     {
       "type": "file",
       "source": "congratulationsApp/congratulationsApp/congratulationsApp.jar",
-      "destination": "/congratulationsApp.jar"
+      "destination": "/usr/local/congratulationsApp.jar"
     }
   ],
   "post-processors": [
