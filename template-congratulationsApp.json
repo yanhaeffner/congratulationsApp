@@ -7,7 +7,7 @@
   "builders":[
     {
       "type": "docker",
-      "image": "ubuntu",
+      "image": "ubuntu:20.04",
       "commit": true,
       "changes": [
         "EXPOSE 8282",
@@ -23,10 +23,12 @@
         "apt-get install ansible"
       ]
     },
+    
     {
       "type": "ansible-local",
       "playbook_file": "../build_app/playbook-congratulationsApp.yml"
     },
+    
     {
       "type": "file",
       "source": "congratulationsApp/congratulationsApp/congratulationsApp.jar",
