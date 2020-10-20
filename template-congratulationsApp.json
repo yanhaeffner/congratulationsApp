@@ -11,7 +11,8 @@
       "commit": true,
       "changes": [
         "EXPOSE 8282",
-        "ENTRYPOINT [\"java\", \"-jar\", \"congratulationsApp.jar\"]"      ]
+ 
+        ]
     }
   ],
   "provisioners":[
@@ -29,11 +30,7 @@
       "playbook_file": "../build_app/playbook-congratulationsApp.yml"
     },
     
-    {
-      "type": "file",
-      "source": "congratulationsApp/congratulationsApp/congratulationsApp.jar",
-      "destination": "congratulationsApp.jar"
-    }
+
   ],
   "post-processors": [
     [
