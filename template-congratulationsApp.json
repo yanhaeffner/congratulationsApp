@@ -30,7 +30,7 @@
     },
     {
       "type": "file",
-      "source": "congratulationsApp/congratulationsApp/congratulationsApp.jar",
+      "source": "../infra_app/congratulationsApp/congratulationsApp.jar",
       "destination": "/usr/local/congratulationsApp.jar"
     }
 
