@@ -13,36 +13,5 @@
         "EXPOSE 8282"
         ]
     }
-  ],
-  "provisioners":[
-    {
-      "type": "shell",
-      "inline": [
-        "apt-get update",
-        "apt-get install python3",
-        "apt-get install ansible"
-      ]
-    },
-    
-    {
-      "type": "ansible-local",
-      "playbook_file": "../build_app/playbook-congratulationsApp.yml"
-    }
-
-  ],
-  "post-processors": [
-    [
-      {
-        "type": "docker-tag",
-        "repository": "yhaeffner/congratulations_app",
-        "tag": "dev"
-      },
-      {
-        "type": "docker-push",
-        "login": true,
-        "login_username":"{{user `dockerhub_username`}}", 
-        "login_password":"{{user `dockerhub_password`}}"
-      }
-    ]
   ]
 }
