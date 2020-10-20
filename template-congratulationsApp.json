@@ -10,8 +10,47 @@
       "image": "ubuntu:20.04",
       "commit": true,
       "changes": [
-        "EXPOSE 8282"
+        "EXPOSE 8282",
+        "ENTRYPOINT [\"java\", \"-jar\", \"/congratulationsApp.jar\"]"      
         ]
     }
+  ],
+  
+  "provisioners":[
+    {
+      "type": "shell",
+      "inline": [
+        "apt-get update",
+        "apt-get install python3",
+        "apt-get install ansible"
+      ]
+    },
+    
+    {
+      "type": "ansible-local",
+      "playbook_file": "../build_app/playbook-congratulationsApp.yml"
+    },
+    
+    {
+      "type": "file",
+      "source": "congratulationsApp/congratulationsApp/congratulationsApp.jar",
+      "destination": "/congratulationsApp.jar"
+    }
+
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "yhaeffner/congratulations_app",
+        "tag": "dev"
+      },
+      {
+        "type": "docker-push",
+        "login": true,
+        "login_username":"{{user `dockerhub_username`}}", 
+        "login_password":"{{user `dockerhub_password`}}"
+      }
+    ]
   ]
 }
