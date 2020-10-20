@@ -10,8 +10,7 @@
       "image": "ubuntu:20.04",
       "commit": true,
       "changes": [
-        "EXPOSE 8282",
- 
+        "EXPOSE 8282"
         ]
     }
   ],
@@ -29,7 +28,11 @@
       "type": "ansible-local",
       "playbook_file": "../build_app/playbook-congratulationsApp.yml"
     },
-    
+    {
+      "type": "file",
+      "source": "congratulationsApp/congratulationsApp/congratulationsApp.jar",
+      "destination": "/usr/local/congratulationsApp.jar"
+    }
 
   ],
   "post-processors": [
