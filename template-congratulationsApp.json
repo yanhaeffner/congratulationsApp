@@ -27,11 +27,6 @@
     {
       "type": "ansible-local",
       "playbook_file": "../build_app/playbook-congratulationsApp.yml"
-    },
-    {
-      "type": "file",
-      "source": "../infra_app/congratulationsApp/congratulationsApp/congratulationsApp.jar",
-      "destination": "/usr/local/congratulationsApp.jar"
     }
 
   ],
