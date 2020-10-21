@@ -44,7 +44,7 @@
       {
         "type": "docker-tag",
         "repository": "{{user `dockerhub_repository`}}",
-        "tag": "dev"
+        "tag": "prod"
       },
       {
         "type": "docker-push",
