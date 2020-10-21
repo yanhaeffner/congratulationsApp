@@ -20,9 +20,9 @@
     {
       "type": "shell",
       "inline": [
-        "apt-get update",
-        "apt-get install python3",
-        "apt-get install ansible"
+        "apt-get update -y",
+        "apt-get install -y python3",
+        "apt-get install -y ansible"
       ]
     },
     
