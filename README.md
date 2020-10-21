@@ -1,37 +1,38 @@
-#Cloud Native - Tema Final 01
-#Yan Haeffner - JT Engenharia de Dados
+## Cloud Native - Tema Final 01
+
+## Yan Haeffner - JT Engenharia de Dados
 
 
 # REQUISITES:
 
-   1) Java 8:
+   ## 1) Java 8:
    
 	a) Install Java 8 (https://docs.datastax.com/en/jdk-install/doc/jdk-install/installOpenJdkDeb.html)
 	
 	b) Check Java version in your terminal with: java -version
 
 
-   2) Docker:
+   ## 2) Docker:
    
 	a) Install Docker (https://docs.docker.com/get-docker/)
 	
 	b) Check Docker version in your terminal with: docker --version
 	
 
-   3) Packer:
+   ## 3) Packer:
    
 	a) Install Packer (https://www.packer.io/docs/install)
 	
 	b) Check Packer version in your terminal with: packer --version
 	
 
-   4) Ports:
+   ## 4) Ports:
    
 	The whole application (including JFrog and Jenkins) uses ports 8080,
 		8081, 8082 and 8282. Make sure to have all these ports available
 
 
-   5) Docker Hub account and a public repository:
+   ## 5) Docker Hub account and a public repository:
    
 	a) Create your Docker Hub account (https://hub.docker.com)
 	
@@ -42,7 +43,7 @@
 
 # INSTALLATION:
 
-   1) JFrog Artifactory:
+   ## 1) JFrog Artifactory:
    
 	a) Execute "buildAndRunJFrog.sh": it will check, create if not
 		present and run a JFrog docker container with 8081 8082 exposed
@@ -60,7 +61,7 @@
 		the docker image		
 
 
-   2) Jenkins:
+   ## 2) Jenkins:
    
 	a) Execute "buildAndRunJenkins.sh": it will download and set both Tomcat
 		and Jenkins files to the "congratulationsApp" folder. After this
@@ -82,7 +83,7 @@
 
 # CONFIGURATION:
 
-   1) Jenkins:
+   ## 1) Jenkins:
    
 	a) Go to "Manage Jenkins" on your Jenkins App and click on "Manage
 		Plugins", then on Available Tab and use the filter text input to
@@ -134,7 +135,7 @@
 
 # PIPELINES:
 
-   1) Build App:
+   ## 1) Build App:
    
 	a) Create a new Jenkins item named "build_app" and select "Pipeline"
 	
@@ -143,7 +144,7 @@
 	
 	c) Save it
 
-   2) Infra App:
+   ## 2) Infra App:
 	
 	a) Create a new Jenkins item named "infra_app" and select "Pipeline"
 	
@@ -152,7 +153,7 @@
 	
 	c) Save it
 
-   3) Run App:
+   ## 3) Run App:
 	
 	a) Create a new Jenkins item named "run_app" and select "Pipeline"
 	
@@ -161,14 +162,16 @@
 	
 	c) Save it
 
-   4) Video: a video explaining every pipeline described here can be found at:
+   ## 4) Video: 
+   
+   	a) a video explaining every pipeline described here can be found at:
 	https://youtu.be/0OdUMO1r7Fw [PT-BR]
 
 
 
 # BUILDING PROCESS:
 
-   1) Open your "build_app" Jenkins item page:
+   ## 1) Open your "build_app" Jenkins item page:
 	
 	http://localhost:8080/jenkins/job/build_app/ and click on "Build Now"
 	
@@ -176,7 +179,7 @@
 	
 	b) If something other than (a) happens, repeat all the steps carefully
 
-   2) Open your "infra_app" Jenkins item page:
+   ## 2) Open your "infra_app" Jenkins item page:
 	
 	http://localhost:8080/jenkins/job/infra_app/ and click on "Build Now"
 	
@@ -187,7 +190,7 @@
 	c) Notice that this process pulls and builds a docker image with Ubuntu
 		and a few other tools, so it may take up to 30 min to complete.
 
-   3) Open your "run_app" Jenkins item page:
+   ## 3) Open your "run_app" Jenkins item page:
 	
 	http://localhost:8080/jenkins/job/run_app/ and click on "Build Now"
 	
@@ -199,11 +202,11 @@
 
 # USING THE APP:
 
-   1) The congratulationsApp will be available at:
+   a) The congratulationsApp will be available at:
    
 	http://localhost:8282/congratulations/{your_name}
 
-   2) To use it, enter the previous link in your browser and change {your_name}
+   b) To use it, enter the previous link in your browser and change {your_name}
 	to your name
 
-   3) Congratulations!
+   c) Congratulations!
