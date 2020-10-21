@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    environment {
+    	ARTIFACTORY_ID = 'jfrog-artifactory-server'
+        ARTIFACTORY_URL = credentials('artifactory-url')
+        ARTIFACTORY_CREDENTIALS = credentials('artifactory-credentials')
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        DOCKERHUB_REPOSITORY = credentials('dockerhub-repository')
+    }
+
+    stages {
+        stage ('Get Artifact') {
+            steps {
+		rtServer (
+		    id: env.ARTIFACTORY_ID,
+		    url: env.ARTIFACTORY_URL,
+		    username: env.ARTIFACTORY_CREDENTIALS_USR,
+		    password: env.ARTIFACTORY_CREDENTIALS_PSW
+		)
+            
+                rtDownload (
+		    serverId: env.ARTIFACTORY_ID,
+		    spec: '''{
+			  "files": [
+			    {
+			      "pattern": "gradle-release-local/congratulationsApp/",
+			      "target": "congratulationsApp/"
+			    }
+			  ]
+		    }'''
+		)
+            }
+        }
+        
+        stage ('Docker Build and Deploy') {
+            steps {
+                sh 'packer build -var "dockerhub_username=$DOCKERHUB_CREDENTIALS_USR" -var "dockerhub_password=$DOCKERHUB_CREDENTIALS_PSW" -var "dockerhub_repository=$DOCKERHUB_REPOSITORY" "../build_app/template-congratulationsApp.json"'
+            }
+        }
+    }
+}

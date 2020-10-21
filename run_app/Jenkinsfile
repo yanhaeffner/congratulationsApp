@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage ('Pull Docker Image') {
+            steps {
+		sh 'docker pull yhaeffner/congratulations_app:dev'
+            }
+        }
+        
+        stage ('Run or Start Container') {
+            steps {
+            	sh '''
+			if ! docker container ls -a | grep -Fq congratulationsApp 1>/dev/null; then
+			  echo "# Docker congratulationsApp container could not be found, running a new one"
+			  docker run -d -p 8282:8282 --name congratulationsApp yhaeffner/congratulations_app:dev
+			else
+			  echo "# Docker congratulationsApp container found, starting it..."
+			  docker start congratulationsApp
+			fi
+            	'''
+            }
+        }
+    }
+}

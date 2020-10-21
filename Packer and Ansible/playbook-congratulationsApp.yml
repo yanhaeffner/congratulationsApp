@@ -1,0 +1,9 @@
+- name: Install required JDK
+  hosts: all
+  become_user: root
+  tasks:
+    - name: Get JDK 8 JRE
+      apt:
+        name: openjdk-8-jre
+        update_cache: yes
+        install_recommends: no
