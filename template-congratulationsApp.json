@@ -2,7 +2,7 @@
   "variables": {
     "dockerhub_username": "",
     "dockerhub_password": "",
-    "dockerhub_repository": "",
+    "dockerhub_repository": ""
   },
   
   "builders":[
